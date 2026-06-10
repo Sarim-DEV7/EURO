@@ -371,23 +371,48 @@ form.addEventListener("submit", function(e) {
         "_blank"
     );
 }); 
-function calculateSavings() {
-    const bill = Number(document.getElementById("bill").value);
-    const system = Number(document.getElementById("system").value);
+function calculateSavings(){
 
-    if (bill <= 0 || isNaN(bill)) {
+    const bill =
+    Number(document.getElementById("bill").value);
+
+    const system =
+    Number(document.getElementById("system").value);
+
+    if(bill <= 0){
+
         document.getElementById("results").innerHTML =
-            "<p>Please enter a valid electricity bill.</p>";
+        "<p>Please enter a valid bill.</p>";
+
         return;
     }
 
-    const monthlySavings = Math.round(bill * 0.80);
-    const yearlySavings = monthlySavings * 12;
-    const systemCost = system * 180000;
-    const payback = (systemCost / yearlySavings).toFixed(1);
-    const savings25 = yearlySavings * 25;
+    let monthlySavings;
+
+    if(system === 5){
+
+        monthlySavings = Math.round(bill * 0.50);
+
+    }else if(system === 10){
+
+        monthlySavings = Math.round(bill * 0.80);
+
+    }else{
+
+        monthlySavings = Math.round(bill * 1.00);
+
+    }
+
+    const yearlySavings =
+    monthlySavings * 12;
 
     document.getElementById("results").innerHTML = `
+
+        <div class="result-card">
+            <h3>System Size</h3>
+            <p>${system} kW</p>
+        </div>
+
         <div class="result-card">
             <h3>Monthly Savings</h3>
             <p>Rs ${monthlySavings.toLocaleString()}</p>
@@ -398,15 +423,6 @@ function calculateSavings() {
             <p>Rs ${yearlySavings.toLocaleString()}</p>
         </div>
 
-        <div class="result-card">
-            <h3>Payback Period</h3>
-            <p>${payback} Years</p>
-        </div>
-
-        <div class="result-card">
-            <h3>25 Year Savings</h3>
-            <p>Rs ${savings25.toLocaleString()}</p>
-        </div>
     `;
 }
 function toggleMenu(){
