@@ -759,6 +759,30 @@ footer p{
         gap:15px;
     }
 }
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .about,
+    .solar{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+    .section-title h2{
+        font-size:2.3rem;
+    }
+
+    .project-gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
 
 /* =========================
    MOBILE RESPONSIVE
@@ -776,22 +800,9 @@ footer p{
     }
 
     .navbar ul{
-        gap:10px;
-    }
-
-    .navbar a{
-        font-size:.85rem;
-    }
-
-    .quote-btn{
-        padding:8px 15px;
-        font-size:.8rem;
-        margin-top:0;
-    }
-@media(max-width:768px){
-
-    .navbar ul{
         gap:8px;
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
     .navbar a{
@@ -799,13 +810,10 @@ footer p{
         font-weight:600;
     }
 
-}
-}
-
-    .navbar ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        margin-top:15px;
+    .quote-btn{
+        padding:8px 15px;
+        font-size:.8rem;
+        margin-top:0;
     }
 
     .hero-content h1{
@@ -816,26 +824,22 @@ footer p{
         font-size:1rem;
     }
 
-    .stats{
+    .stats,
+    .service-grid,
+    .project-gallery,
+    .results{
         grid-template-columns:1fr;
     }
 
-    .service-grid{
-        grid-template-columns:1fr;
+    .calculator{
+        padding:80px 5%;
     }
 
-    .project-gallery{
-        grid-template-columns:1fr;
+    .calculator-box{
+        padding:25px;
     }
 
-    .testimonial-container{
-        grid-template-columns:1fr;
-    }
-
-    .quote-btn{
-        margin-top:15px;
-    }
-
+}
 
 /* =========================
    SMALL PHONES
@@ -856,41 +860,4 @@ footer p{
         font-size:2rem;
     }
 
-/* =========================
-   SOLAR CALCULATOR MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    .calculator{
-        padding:80px 5%;
-    }
-
-    .calculator-box{
-        padding:25px;
-    }
-
-    .calculator-box input,
-    .calculator-box select,
-    .calculator-box button{
-        width:100%;
-        font-size:1rem;
-    }
-
-    .results{
-        grid-template-columns:1fr;
-    }
-
-    .result-card{
-        padding:20px;
-    }
-
-    .result-card h3{
-        font-size:1.1rem;
-    }
-
-    .result-card p{
-        font-size:1rem;
-        word-break:break-word;
-    }
-} 
+}
