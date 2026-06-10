@@ -1,11 +1,4 @@
-```javascript
-/* ===================================
-   EURO ENTERPRISES JAVASCRIPT
-=================================== */
 
-/* ===========================
-   COUNTER ANIMATION
-=========================== */
 alert("JavaScript Loaded!");
 const counters = document.querySelectorAll(".stat-box h2");
 
